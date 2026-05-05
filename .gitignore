@@ -1,0 +1,23 @@
+# --- Python / Backend ---
+__pycache__/
+.venv/
+env/
+venv/
+*.py[cod]
+*$py.class
+.env
+db.sqlite3
+
+# --- Angular / Frontend ---
+frontend/node_modules/
+frontend/.angular/
+frontend/dist/
+.DS_Store
+Thumbs.db
+
+# --- Datos Pesados ---
+dataset/
+*.tflite
+*.h5
+static/uploads/*
+!static/uploads/.gitkeep
