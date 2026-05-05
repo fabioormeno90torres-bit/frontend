@@ -1,0 +1,30 @@
+:host {
+  display: block;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  font-family: "Segoe UI", sans-serif;
+}
+
+.app { padding: 20px 40px; max-width: 1200px; margin: auto; }
+header { text-align: center; margin-bottom: 30px; color: white; }
+form { display: flex; justify-content: center; gap: 15px; margin-top: 10px; }
+input[type="file"] { background: white; border-radius: 5px; padding: 5px; }
+
+button {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.content { display: flex; gap: 30px; flex-wrap: wrap; margin-top: 20px; }
+.left, .right { flex: 1; min-width: 340px; display: flex; flex-direction: column; gap: 25px; }
+.card { background: white; border-radius: 12px; padding: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+.preview-img, .chart-img { width: 100%; border-radius: 10px; }
+.prediction { font-size: 20px; color: #27ae60; text-align: center; font-weight: bold; }
+
+table { width: 100%; border-collapse: collapse; margin-top: 15px; }
+th, td { padding: 10px; text-align: center; border-bottom: 1px solid #ddd; }
+th { background-color: #3498db; color: white; }

@@ -1,0 +1,56 @@
+<div class="app">
+  <header>
+    <h1>Clasificador de Tumores Cerebrales</h1>
+    <form (submit)="$event.preventDefault(); handleSubmit()">
+      <input type="file" accept="image/*" (change)="handleFileChange($event)" required />
+      <button type="submit">Clasificar Imagen</button>
+    </form>
+  </header>
+
+  <main class="content">
+    <section class="left">
+      @if (imageUrl) {
+        <div class="card">
+          <h2>Imagen Analizada</h2>
+          <img [src]="imageUrl" alt="MRI" class="preview-img" />
+        </div>
+      }
+
+      @if (prediction) {
+        <div class="card result-card">
+          <h2>Resultado</h2>
+          <p class="prediction">{{ prediction }}</p>
+        </div>
+      }
+    </section>
+
+    <section class="right">
+      @if (probs) {
+        <div class="card">
+          <h2>Gráfico de Probabilidades</h2>
+          <img [src]="graphUrl" alt="Gráfico" class="chart-img" />
+        </div>
+
+        <div class="card">
+          <h2>Detalles por Clase</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>Clase</th>
+                <th>Probabilidad</th>
+              </tr>
+            </thead>
+            <tbody>
+              @for (item of probEntries; track item[0]) {
+                <tr>
+                  <td>{{ item[0] }}</td>
+                  <td>{{ (item[1] * 100).toFixed(2) }}%</td>
+                </tr>
+              }
+            </tbody>
+          </table>
+        </div>
+      }
+    </section>
+  </main>
+</div>
